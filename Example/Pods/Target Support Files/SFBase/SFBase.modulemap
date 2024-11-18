@@ -1,0 +1,6 @@
+framework module SFBase {
+  umbrella header "SFBase-umbrella.h"
+
+  export *
+  module * { export * }
+}
