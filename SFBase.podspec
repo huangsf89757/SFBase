@@ -43,6 +43,8 @@ TODO: Add long description of the pod here.
   
   
   # --- 依赖 --- #
+  # Basic
+  s.dependency 'SFExtension',                 '~> 0.1.0'
   # Third
   s.dependency 'Then',      '~> 3.0.0'
   
