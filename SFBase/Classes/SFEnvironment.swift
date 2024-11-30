@@ -1,8 +1,8 @@
 //
-//  SFBase.swift
+//  SFEnvironment.swift
 //  SFBase
 //
-//  Created by hsf on 2024/7/12.
+//  Created by hsf on 2024/11/30.
 //
 
 import Foundation
@@ -17,7 +17,7 @@ public enum SFEnvironment: CaseIterable {
 
 extension SFEnvironment {
     /// 当前环境
-    public static var cur: SFEnvironment = .prd
+    public static var cur: SFEnvironment = .dev
     
     /// 当前环境是否未Debug环境
     public static var isDebug: Bool {
@@ -40,15 +40,18 @@ extension SFEnvironment {
     }
 }
 
-
-// MARK: - SFDeveloper
-public struct SFDeveloper: OptionSet {
-    public let rawValue: Int
-    public init(rawValue: Int) {
-        self.rawValue = rawValue
+extension SFEnvironment {
+    /// 本地路径
+    public var path: String {
+        switch self {
+        case .dev:
+            return "dev"
+        case .sit:
+            return "sit"
+        case .ppe:
+            return "ppe"
+        case .prd:
+            return "prd"
+        }
     }
-}
-
-extension SFDeveloper {
-    public static let hsf = Self(rawValue: 1 << 0)
 }
