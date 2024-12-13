@@ -9,12 +9,14 @@ import Foundation
 
 
 // MARK: - SFUserDefault
-public class SFUserDefault: UserDefaults {}
+public class SFUserDefault: UserDefaults {
+    public static let perfixKey = "SF_KEY_"
+}
 
 
 // MARK: - 版本记录
 extension SFUserDefault {
-    private static let key_versionRecords = "SF_KEY_versionRecords"
+    private static let key_versionRecords = perfixKey + "versionRecords"
     
     /// 版本记录
     public static var versionRecords: [Date: [String: String]] {
